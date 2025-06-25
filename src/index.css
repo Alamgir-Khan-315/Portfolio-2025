@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hover-text {
+    @apply hover:bg-gradient-to-r hover:from-purple-700 hover:to-blue-800 hover:scale-105 transition-all duration-300 hover:text-white;
+}
