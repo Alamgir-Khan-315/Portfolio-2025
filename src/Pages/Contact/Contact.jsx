@@ -13,18 +13,18 @@ export default function Contact() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 flex items-center justify-center min-h-[calc(100vh-5rem)]">
-      <div className="md:flex md:items-start md:justify-between md:space-x-8 max-w-6xl w-full">
-        <div className="md:w-1/2 mb-8 md:mb-0">
-          <h1 className="text-4xl font-bold text-blue-500 mb-4">Contact Me</h1>
-          <p className="text-gray-300">Get in touch with me through this form.</p>
-          <div className="mt-6 text-justify">
-            <p className="text-gray-300">I'm always interested in hearing about new projects and opportunities.</p>
-            <p className="text-gray-300 mt-4">Whether you have a question, want to start a project, or just want to connect, feel free to send me a message.</p>
-          </div>
-        </div>
+    <div className="container mx-auto px-4 py-8 min-h-[calc(100vh-5rem)]">
+      <h1 className="text-4xl font-bold text-blue-500 mb-5 text-center">Contact Me</h1>
 
+      <div className="md:flex md:items-start md:justify-between md:space-x-8 max-w-6xl w-full mx-auto">
+        
         <form onSubmit={handleSubmit} className="md:w-1/2">
+
+          <div className="mt-6 text-justify">
+          <p className="text-gray-300 text-2xl md:text-3xl font-bold">Get In Touch</p>
+              <p className="text-gray-300 my-2 md:my-4">Whether you have a question, want to start a project, or just want to connect, feel free to send me a message.</p>
+          </div>
+
           <div className="mb-6">
             <label htmlFor="name" className="block text-blue-500 mb-2">Name</label>
             <input
@@ -53,18 +53,49 @@ export default function Contact() {
               id="message"
               name="message"
               required
-              rows="5"
+              rows="3"
               className="w-full px-4 py-2 rounded bg-gray-800 text-white border border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
             ></textarea>
           </div>
 
           <button
             type="submit"
-            className="bg-blue-500 font-bold text-black px-6 py-2 rounded hover:bg-blue-600 transition-colors duration-200"
+            className="hover-text w-full button"
           >
             Send Message
           </button>
+
         </form>
+
+        <section className="md:w-1/2 mb-8 md:mb-0">
+          
+          <div className="img size-[15rem] mx-auto rounded-full bg-yellow-200 my-5">
+            <img src="" alt="Pic" />
+          </div>
+
+          <div className="contact text-white w-fit mx-auto my-12 space-y-3">
+            <div className="email flex items-center gap-3">
+              <div className="icon">icon</div>
+              <span>alamgirkhqwer@gmail.com</span>
+            </div>
+            <div className="email flex items-center gap-3">
+              <div className="icon">icon</div>
+              <span>+92 315 4572266</span>
+            </div>
+            <div className="email flex items-center gap-3">
+              <div className="icon">icon</div>
+              <span>Old Muzafrabad Colony Landhi, Karachi.</span>
+            </div>
+          </div>
+
+          <div className="social flex gap-4 w-fit mx-auto my-12">
+            <div className="size-12 rounded-full bg-blue-500">1</div>
+            <div className="size-12 rounded-full bg-blue-500">1</div>
+            <div className="size-12 rounded-full bg-blue-500">1</div>
+          </div>
+
+        </section>
+
       </div>
     </div>
   )

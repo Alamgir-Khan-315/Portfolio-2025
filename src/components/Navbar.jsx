@@ -9,7 +9,7 @@ export default function Navbar() {
     w-[90%] lg:w-[80%] xl:w-[70%] 2xl:w-[60%] mx-auto rounded-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center space-x-[100%]">
+          <div className="flex items-center justify-between w-full">
             <div className="flex-shrink-0">
               <span className="font-extrabold ml-5 text-4xl relative before:content-[''] before:absolute before:w-4 before:h-4 before:-top-2 before:-left-2 before:border-t-2 before:border-l-2 before:border-blue-500 after:content-[''] after:absolute after:w-4 after:h-4 after:-bottom-2 after:-right-2 after:border-b-2 after:border-r-2 after:border-blue-500"><span className="text-blue-400">A</span><span className="text-blue-600">K</span></span>
             </div>
@@ -17,38 +17,48 @@ export default function Navbar() {
               <div className="flex items-baseline space-x-8">
                 <Link
                   to="/"
-                  className="text-blue-500 hover:bg-blue-500 hover:text-black px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  className="text-blue-500 hover:text-white hover:bg-gradient-to-r hover:from-purple-700 hover:to-blue-800 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
                 >
                   Home
                 </Link>
                 <Link
                   to="/about"
-                  className="text-blue-500 hover:bg-blue-500 hover:text-black px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  className="text-blue-500 hover:text-white hover:bg-gradient-to-r hover:from-purple-700 hover:to-blue-800 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
                 >
                   About
                 </Link>
                 <Link
                   to="/projects"
-                  className="text-blue-500 hover:bg-blue-500 hover:text-black px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  className="text-blue-500 hover:text-white hover:bg-gradient-to-r hover:from-purple-700 hover:to-blue-800 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
                 >
                   Projects
                 </Link>
                 <Link
                   to="/contact"
-                  className="text-blue-500 hover:bg-blue-500 hover:text-black px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  className="text-blue-500 hover:text-white hover:bg-gradient-to-r hover:from-purple-700 hover:to-blue-800 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
                 >
                   Contact
+                </Link>
+
+                
+                <Link to="/contact">
+                  <button className="bg-gradient-to-r from-slate-700 to-slate-800 text-blue-500 hover:bg-blue-500 hover:text-white px-3 py-2 rounded-full text-base font-bold
+                    md:font-extrabold hover:bg-gradient-to-r hover:from-purple-700 hover:to-blue-800 hover:scale-105 transition-all duration-300">
+                    Hire me
+                  </button>
                 </Link>
               </div>
             </div>
           </div>
 
           {/* mob hire me btn */}
-          <div className="btn md:hidden ml-20">
-            <button className="bg-gradient-to-r from-slate-700 to-slate-800 text-blue-500 hover:bg-blue-500 hover:text-white px-3 py-2 rounded-full text-base font-bold
-              md:font-extrabold hover:bg-gradient-to-r hover:from-purple-700 hover:to-blue-800 hover:scale-105 transition-all duration-300">
-              Hire me
-            </button>
+          <div className="btn w-[50%] md:hidden">
+          <Link to="/contact">
+                  <button className="bg-gradient-to-r from-slate-700 to-slate-800 text-blue-500 hover:bg-blue-500 hover:text-white px-3 py-2 rounded-full text-base font-bold
+                    md:font-extrabold hover:bg-gradient-to-r hover:from-purple-700 hover:to-blue-800 hover:scale-105 transition-all duration-300">
+                    Hire me
+                  </button>
+                </Link>
           </div>
 
           {/* Mobile menu button */}
