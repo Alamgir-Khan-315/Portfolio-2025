@@ -1,3 +1,4 @@
+
 export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,7 +19,40 @@ export default function Contact() {
 
       <div className="md:flex md:items-start md:justify-between md:space-x-8 max-w-6xl w-full mx-auto">
         
-        <form onSubmit={handleSubmit} className="md:w-1/2">
+      <section className="md:w-1/2 mb-8 md:mb-0">
+          
+          <div className="img size-[15rem] mx-auto rounded-full bg-yellow-200 my-5">
+            
+            <div className="img pt-2 rounded-[1rem] overflow-hidden">
+            <img src="/img/mail.png" alt="Mail" />
+            </div>
+           
+          </div>
+
+          <div className="contact text-white w-fit mx-auto my-12 space-y-3">
+            <div className="email flex items-center gap-3">
+              <div className="icon">icon</div>
+              <span>alamgirkhqwer@gmail.com</span>
+            </div>
+            <div className="email flex items-center gap-3">
+              <div className="icon">icon</div>
+              <span>+92 315 4572266</span>
+            </div>
+            <div className="email flex items-center gap-3">
+              <div className="icon">icon</div>
+              <span>Old Muzafrabad Colony Landhi, Karachi.</span>
+            </div>
+          </div>
+
+          <div className="social flex gap-4 w-fit mx-auto my-12">
+            <div className="size-12 rounded-full bg-blue-500">1</div>
+            <div className="size-12 rounded-full bg-blue-500">1</div>
+            <div className="size-12 rounded-full bg-blue-500">1</div>
+          </div>
+
+        </section>
+
+        s<form onSubmit={handleSubmit} className="md:w-1/2">
 
           <div className="mt-6 text-justify">
           <p className="text-gray-300 text-2xl md:text-3xl font-bold">Get In Touch</p>
@@ -67,34 +101,7 @@ export default function Contact() {
 
         </form>
 
-        <section className="md:w-1/2 mb-8 md:mb-0">
-          
-          <div className="img size-[15rem] mx-auto rounded-full bg-yellow-200 my-5">
-            <img src="" alt="Pic" />
-          </div>
-
-          <div className="contact text-white w-fit mx-auto my-12 space-y-3">
-            <div className="email flex items-center gap-3">
-              <div className="icon">icon</div>
-              <span>alamgirkhqwer@gmail.com</span>
-            </div>
-            <div className="email flex items-center gap-3">
-              <div className="icon">icon</div>
-              <span>+92 315 4572266</span>
-            </div>
-            <div className="email flex items-center gap-3">
-              <div className="icon">icon</div>
-              <span>Old Muzafrabad Colony Landhi, Karachi.</span>
-            </div>
-          </div>
-
-          <div className="social flex gap-4 w-fit mx-auto my-12">
-            <div className="size-12 rounded-full bg-blue-500">1</div>
-            <div className="size-12 rounded-full bg-blue-500">1</div>
-            <div className="size-12 rounded-full bg-blue-500">1</div>
-          </div>
-
-        </section>
+       
 
       </div>
     </div>

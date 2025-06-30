@@ -5,13 +5,15 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="bg-black border-b py-1 border-blue-500 relative
-    w-[90%] lg:w-[80%] xl:w-[70%] 2xl:w-[60%] mx-auto rounded-full">
+    <nav className="bg-black fixed border-b py-1 border-blue-500 w-[90%] lg:w-[80%] xl:w-[70%] 2xl:w-[60%] mx-auto rounded-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center justify-between w-full">
             <div className="flex-shrink-0">
-              <span className="font-extrabold ml-5 text-4xl relative before:content-[''] before:absolute before:w-4 before:h-4 before:-top-2 before:-left-2 before:border-t-2 before:border-l-2 before:border-blue-500 after:content-[''] after:absolute after:w-4 after:h-4 after:-bottom-2 after:-right-2 after:border-b-2 after:border-r-2 after:border-blue-500"><span className="text-blue-400">A</span><span className="text-blue-600">K</span></span>
+              <span className="font-extrabold ml-5 flex gap-1 md:gap-3 text-4xl relative before:content-[''] before:absolute before:w-4 before:h-4 before:-top-2 before:-left-2 before:border-t-2 before:border-l-2 before:border-blue-500 after:content-[''] after:absolute after:w-4 after:h-4 after:-bottom-2 after:-right-2 after:border-b-2 after:border-r-2 after:border-blue-500">
+                <span className="text-blue-400 md:hidden">A</span>    <span className="text-blue-400 hidden md:block">Alamgir</span>
+                <span className="text-blue-600 md:hidden">K</span>    <span className="text-blue-600 hidden md:block">Khan</span>
+              </span>
             </div>
             <div className="hidden md:block md:ml-10">
               <div className="flex items-baseline space-x-8">
