@@ -8,6 +8,7 @@ import About from './Pages/About/About'
 import Projects from './Pages/Project/Projects'
 import Contact from './Pages/Contact/Contact'
 import Education from './Pages/Education/Education'
+import Skills from './Pages/Skills/skills'
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -32,6 +33,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path='skills' element={<Skills />}/>
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/education" element={<Education />} />

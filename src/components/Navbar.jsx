@@ -11,12 +11,12 @@ export default function Navbar() {
           <div className="flex items-center justify-between w-full">
             <div className="flex-shrink-0">
               <span className="font-extrabold ml-5 flex gap-1 md:gap-3 text-4xl relative before:content-[''] before:absolute before:w-4 before:h-4 before:-top-2 before:-left-2 before:border-t-2 before:border-l-2 before:border-blue-500 after:content-[''] after:absolute after:w-4 after:h-4 after:-bottom-2 after:-right-2 after:border-b-2 after:border-r-2 after:border-blue-500">
-                <span className="text-blue-400 md:hidden">A</span>    <span className="text-blue-400 hidden md:block">Alamgir</span>
-                <span className="text-blue-600 md:hidden">K</span>    <span className="text-blue-600 hidden md:block">Khan</span>
+                <span className="text-blue-400 lg:hidden">A</span>    <span className="text-blue-400 hidden lg:block">Alamgir</span>
+                <span className="text-blue-600 lg:hidden">K</span>    <span className="text-blue-600 hidden lg:block">Khan</span>
               </span>
             </div>
             <div className="hidden md:block md:ml-10">
-              <div className="flex items-baseline space-x-8">
+              <div className="flex items-baseline md:space-x-2 space-x-8">
                 <Link
                   to="/"
                   className="text-blue-500 hover:text-white hover:bg-gradient-to-r hover:from-purple-700 hover:to-blue-800 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
@@ -28,6 +28,12 @@ export default function Navbar() {
                   className="text-blue-500 hover:text-white hover:bg-gradient-to-r hover:from-purple-700 hover:to-blue-800 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
                 >
                   About
+                </Link>
+                <Link
+                  to="/skills"
+                  className="text-blue-500 hover:text-white hover:bg-gradient-to-r hover:from-purple-700 hover:to-blue-800 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
+                >
+                  Skills
                 </Link>
                 <Link
                   to="/projects"
@@ -150,6 +156,13 @@ export default function Navbar() {
             >
               About
             </Link>
+            <Link
+                  to="/skills"
+                  className="block text-blue-500 hover-text px-3 py-2 rounded-md text-base font-medium"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Skills
+                </Link>
             <Link
               to="/projects"
               className="block text-blue-500 hover-text px-3 py-2 rounded-md text-base font-medium"

@@ -1,3 +1,9 @@
+import { TiSocialLinkedin } from "react-icons/ti";
+import { SlSocialGithub } from "react-icons/sl";
+import { FaWhatsapp } from "react-icons/fa";
+import { CgMail } from "react-icons/cg";
+import { MdOutlineLocationOn } from "react-icons/md";
+import { FaPhone } from "react-icons/fa6";
 
 export default function Contact() {
   const handleSubmit = (e) => {
@@ -31,28 +37,28 @@ export default function Contact() {
 
           <div className="contact text-white w-fit mx-auto my-12 space-y-3">
             <div className="email flex items-center gap-3">
-              <div className="icon">icon</div>
+              <div className="icon"><CgMail /></div>
               <span>alamgirkhqwer@gmail.com</span>
             </div>
             <div className="email flex items-center gap-3">
-              <div className="icon">icon</div>
+              <div className="icon"><FaPhone /></div>
               <span>+92 315 4572266</span>
             </div>
             <div className="email flex items-center gap-3">
-              <div className="icon">icon</div>
+              <div className="icon"><MdOutlineLocationOn /></div>
               <span>Old Muzafrabad Colony Landhi, Karachi.</span>
             </div>
           </div>
 
           <div className="social flex gap-4 w-fit mx-auto my-12">
-            <div className="size-12 rounded-full bg-blue-500">1</div>
-            <div className="size-12 rounded-full bg-blue-500">1</div>
-            <div className="size-12 rounded-full bg-blue-500">1</div>
+            <div className="size-12 rounded-full border border-blue-500 text-3xl flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all duration-300"><TiSocialLinkedin /></div>
+            <div className="size-12 rounded-full border border-blue-500 text-3xl flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all duration-300"><SlSocialGithub /></div>
+            <div className="size-12 rounded-full border border-blue-500 text-3xl flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all duration-300"><FaWhatsapp /></div>
           </div>
 
         </section>
 
-        s<form onSubmit={handleSubmit} className="md:w-1/2">
+        <form onSubmit={handleSubmit} className="md:w-1/2">
 
           <div className="mt-6 text-justify">
           <p className="text-gray-300 text-2xl md:text-3xl font-bold">Get In Touch</p>
