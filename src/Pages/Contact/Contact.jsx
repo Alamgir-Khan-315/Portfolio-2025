@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { TiSocialLinkedin } from "react-icons/ti";
 import { SlSocialGithub } from "react-icons/sl";
 import { FaWhatsapp } from "react-icons/fa";
@@ -51,9 +52,9 @@ export default function Contact() {
           </div>
 
           <div className="social flex gap-4 w-fit mx-auto my-12">
-            <div className="size-12 rounded-full border border-blue-500 text-3xl flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all duration-300"><TiSocialLinkedin /></div>
-            <div className="size-12 rounded-full border border-blue-500 text-3xl flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all duration-300"><SlSocialGithub /></div>
-            <div className="size-12 rounded-full border border-blue-500 text-3xl flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all duration-300"><FaWhatsapp /></div>
+            <Link to='https://www.linkedin.com/in/alamgir-khan-248b89259/' target="_blank"><div className="size-12 rounded-full border border-blue-500 text-3xl flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all duration-300"><TiSocialLinkedin /></div></Link>
+            <Link to='https://github.com/Alamgir-Khan-315' target="_blank"><div className="size-12 rounded-full border border-blue-500 text-3xl flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all duration-300"><SlSocialGithub /></div></Link>
+            <Link to='https://wa.me/923154572266' target="_blank"><div className="size-12 rounded-full border border-blue-500 text-3xl flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all duration-300"><FaWhatsapp /></div></Link>
           </div>
 
         </section>
