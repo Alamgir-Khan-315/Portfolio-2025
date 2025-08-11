@@ -10,6 +10,8 @@ import Contact from './Pages/Contact/Contact'
 import Education from './Pages/Education/Education'
 import Skills from './Pages/Skills/skills'
 
+import RockPaperScissors from './Pages/Project/Rock-paper-scissor/home'
+
 export default function App() {
   const [isLoading, setIsLoading] = useState(true)
 
@@ -37,6 +39,8 @@ export default function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/education" element={<Education />} />
+
+            <Route path="/project/rock" element={<RockPaperScissors />} />
           </Routes>
         </div>
       </div>

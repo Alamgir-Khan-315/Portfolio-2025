@@ -3,6 +3,12 @@ import { useState } from 'react'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const Navstyle = "text-blue-500 hover:text-white hover:bg-gradient-to-r hover:from-purple-700 hover:to-blue-800 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
+  const menu = [
+    {name:'Home' , link:'/' , className:Navstyle},  {name:'About' , link:'/about' , className:Navstyle},
+    {name:'Skills' , link:'/skills' , className:Navstyle},  {name:'Projects' , link:'/projects' , className:Navstyle},
+    {name:'Contact' , link:'/contact' , className:Navstyle}
+  ]
 
   return (
     <nav className="bg-black fixed border-b py-1 border-blue-500 w-[90%] lg:w-[80%] xl:w-[70%] 2xl:w-[60%] mx-auto rounded-full">
@@ -17,38 +23,16 @@ export default function Navbar() {
             </div>
             <div className="hidden md:block md:ml-10">
               <div className="flex items-baseline md:space-x-2 space-x-8">
-                <Link
-                  to="/"
-                  className="text-blue-500 hover:text-white hover:bg-gradient-to-r hover:from-purple-700 hover:to-blue-800 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
-                >
-                  Home
-                </Link>
-                <Link
-                  to="/about"
-                  className="text-blue-500 hover:text-white hover:bg-gradient-to-r hover:from-purple-700 hover:to-blue-800 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
-                >
-                  About
-                </Link>
-                <Link
-                  to="/skills"
-                  className="text-blue-500 hover:text-white hover:bg-gradient-to-r hover:from-purple-700 hover:to-blue-800 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
-                >
-                  Skills
-                </Link>
-                <Link
-                  to="/projects"
-                  className="text-blue-500 hover:text-white hover:bg-gradient-to-r hover:from-purple-700 hover:to-blue-800 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
-                >
-                  Projects
-                </Link>
-                <Link
-                  to="/contact"
-                  className="text-blue-500 hover:text-white hover:bg-gradient-to-r hover:from-purple-700 hover:to-blue-800 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
-                >
-                  Contact
-                </Link>
-
                 
+                {menu.map((d,i)=>(
+                  <Link
+                  to={d.link}
+                  className={d.className}
+                >
+                  {d.name}
+                </Link>
+                ))}
+
                 <Link to="/contact">
                   <button className="bg-gradient-to-r from-slate-700 to-slate-800 text-blue-500 hover:bg-blue-500 hover:text-white px-3 py-2 rounded-full text-base font-bold
                     md:font-extrabold hover:bg-gradient-to-r hover:from-purple-700 hover:to-blue-800 hover:scale-105 transition-all duration-300">
