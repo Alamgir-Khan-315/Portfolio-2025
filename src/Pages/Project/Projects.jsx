@@ -4,7 +4,7 @@ import { GoArrowRight } from "react-icons/go";
 
 export default function Projects() {
   const Projects = [
-    { logo:'/img/Projects/rock-paper-scissors.png' , name: 'Rock Paper Scissors', description:'A simple interactive game where players choose rock, paper, or scissors to compete against the computer, with instant results and score tracking.', tags: ['HTML', 'CSS', 'JavaScript'], Giticon: <SlSocialGithub /> , Github:'' ,  Liveicon: <GoArrowRight/> , Live:'/project/rock'},
+    { logo:'/img/Projects/rock-paper-scissors.png' , name: 'Rock Paper Scissors', description:'A simple interactive game where players choose rock, paper, or scissors to compete against the computer, with instant results and score tracking.', tags: ['HTML', 'CSS', 'JavaScript'], Giticon: <SlSocialGithub /> , Github:'https://github.com/Alamgir-Khan-315/Rock-Paper-Scissor.git' ,  Liveicon: <GoArrowRight/> , Live:'https://rock-paper-scissor-sigma-one.vercel.app/'},
     { name: 'Rock Paper Scissors', description: 'qwer' },
     { name: 'Rock Paper Scissors', description: 'qwer' },
   ];
@@ -33,8 +33,8 @@ export default function Projects() {
             </div>
 
             <div className="btn text-white flex gap-5 py-2">
-              <Link to={d.Github}><div className="button hover-text flex items-center gap-2"><span className="text-xl">{d.Giticon}</span>Github</div></Link>
-              <Link to={d.Live}><div className="button hover-text flex items-center gap-2"><span className="text-xl">{d.Liveicon}</span>Live</div></Link>
+              <Link to={d.Github} target="_blank"><div className="button hover-text flex items-center gap-2"><span className="text-xl">{d.Giticon}</span>Github</div></Link>
+              <Link to={d.Live} target="_blank"><div className="button hover-text flex items-center gap-2"><span className="text-xl">{d.Liveicon}</span>Live</div></Link>
             </div>
 
           </div>
