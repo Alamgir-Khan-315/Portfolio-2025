@@ -1,174 +1,110 @@
-import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useState } from 'react';
+import { NavLink, Link } from 'react-router-dom';
+import { HiMenuAlt3, HiX } from 'react-icons/hi';
+
+const menuItems = [
+  { name: 'Home', link: '/' },
+  { name: 'About', link: '/about' },
+  { name: 'Education', link: '/education' },
+  { name: 'Skills', link: '/skills' },
+  { name: 'Projects', link: '/projects' },
+];
+
+const HireMeButton = ({ className = '' }) => (
+  <Link
+    to="/contact"
+    className={`inline-block bg-gradient-to-r from-purple-600 to-blue-500 text-white font-semibold px-5 py-2 rounded-full shadow-lg hover:scale-105 hover:shadow-blue-500/50 transition-all duration-300 ${className}`}
+  >
+    Hire Me
+  </Link>
+);
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
-  const Navstyle = "text-blue-500 hover:text-white hover:bg-gradient-to-r hover:from-purple-700 hover:to-blue-800 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
-  const menu = [
-    {name:'Home' , link:'/' , className:Navstyle},  {name:'About' , link:'/about' , className:Navstyle},
-    {name:'Skills' , link:'/skills' , className:Navstyle},  {name:'Projects' , link:'/projects' , className:Navstyle},
-    {name:'Contact' , link:'/contact' , className:Navstyle}
-  ]
+  const [isOpen, setIsOpen] = useState(false);
+
+  const navLinkClasses = ({ isActive }) =>
+    `px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ${isActive
+      ? 'bg-gradient-to-r from-purple-600 to-blue-500 text-white shadow-md'
+      : 'text-gray-300 hover:bg-gray-700/50 hover:text-white'
+    }`;
+
+  const mobileNavLinkClasses = ({ isActive }) =>
+    `block text-lg px-4 py-3 rounded-md font-medium transition-all duration-300 ${isActive
+      ? 'bg-gradient-to-r from-purple-600 to-blue-500 text-white'
+      : 'text-gray-300 hover:bg-gray-700/50 hover:text-white'
+    }`;
 
   return (
-    <nav className="bg-black fixed border-b py-1 border-blue-500 w-[90%] lg:w-[80%] xl:w-[70%] 2xl:w-[60%] mx-auto rounded-full">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center justify-between w-full">
-            <div className="flex-shrink-0">
-              <span className="font-extrabold ml-5 flex gap-1 md:gap-3 text-4xl relative before:content-[''] before:absolute before:w-4 before:h-4 before:-top-2 before:-left-2 before:border-t-2 before:border-l-2 before:border-blue-500 after:content-[''] after:absolute after:w-4 after:h-4 after:-bottom-2 after:-right-2 after:border-b-2 after:border-r-2 after:border-blue-500">
-                <span className="text-blue-400 lg:hidden">A</span>    <span className="text-blue-400 hidden lg:block">Alamgir</span>
-                <span className="text-blue-600 lg:hidden">K</span>    <span className="text-blue-600 hidden lg:block">Khan</span>
-              </span>
+    <>
+      <nav className="fixed top-4 left-0 right-0 z-50">
+        <div className="w-[90%] max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-2 bg-black/30 backdrop-blur-lg border border-blue-500/30 rounded-full">
+          <div className="flex items-center justify-between h-12">
+            {/* Logo */}
+            <Link to="/" className="flex-shrink-0 text-2xl font-bold text-white">
+              <span className="md:hidden">A<span className="text-purple-400">K</span></span>
+              <span className="hidden md:inline">Alamgir<span className="text-purple-400">Khan</span></span>
+            </Link>
+
+            {/* Desktop Menu */}
+            <div className="hidden md:flex items-center space-x-4">
+              {menuItems.map((item) => (
+                <NavLink key={item.name} to={item.link} className={navLinkClasses}>
+                  {item.name}
+                </NavLink>
+              ))}
+              <NavLink to="/contact" className={navLinkClasses}>Contact</NavLink>
+              <HireMeButton />
             </div>
-            <div className="hidden md:block md:ml-10">
-              <div className="flex items-baseline md:space-x-2 space-x-8">
-                
-                {menu.map((d,i)=>(
-                  <Link
-                  to={d.link}
-                  className={d.className}
-                >
-                  {d.name}
-                </Link>
-                ))}
 
-                <Link to="/contact">
-                  <button className="bg-gradient-to-r from-slate-700 to-slate-800 text-blue-500 hover:bg-blue-500 hover:text-white px-3 py-2 rounded-full text-base font-bold
-                    md:font-extrabold hover:bg-gradient-to-r hover:from-purple-700 hover:to-blue-800 hover:scale-105 transition-all duration-300">
-                    Hire me
-                  </button>
-                </Link>
-              </div>
+            {/* Mobile Menu Button */}
+            <div className="md:hidden">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-700/50 focus:outline-none"
+              >
+                <span className="sr-only">Open main menu</span>
+                {isOpen ? <HiX className="h-6 w-6" /> : <HiMenuAlt3 className="h-6 w-6" />}
+              </button>
             </div>
-          </div>
-
-          {/* mob hire me btn */}
-          <div className="btn w-[50%] md:hidden">
-          <Link to="/contact">
-                  <button className="bg-gradient-to-r from-slate-700 to-slate-800 text-blue-500 hover:bg-blue-500 hover:text-white px-3 py-2 rounded-full text-base font-bold
-                    md:font-extrabold hover:bg-gradient-to-r hover:from-purple-700 hover:to-blue-800 hover:scale-105 transition-all duration-300">
-                    Hire me
-                  </button>
-                </Link>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 text-blue-500 hover:bg-blue-500 hover:text-black focus:outline-none z-50 border-2 border-blue-500 rounded-full hover:scale-105 transition-all duration-300"
-            >
-              <span className="sr-only">Open main menu</span>
-              {!isOpen ? (
-                <svg
-                  className="block h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  className="block h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              )}
-            </button>
           </div>
         </div>
-      </div>
+      </nav>
 
       {/* Mobile menu overlay */}
       {isOpen && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden" ></div>
+        <div
+          onClick={() => setIsOpen(false)}
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden"
+        ></div>
       )}
 
       {/* Mobile menu */}
-      <div className={`md:hidden fixed inset-y-0 right-0 w-64 bg-gray-900 transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out z-50`}>
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 h-full flex flex-col   ">
-          <div className="flex justify-end p-4">
-            <button
-              onClick={() => setIsOpen(false)}
-              className="text-blue-500 hover:bg-blue-500 hover:text-black p-2 border border-blue-500 rounded-md  transition-all duration-300"
-            >
-              <svg
-                className="h-6 w-6"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
+      <div
+        className={`md:hidden fixed inset-y-0 right-0 w-64 bg-[#0f172a] transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out z-50`}
+      >
+        <div className="p-5 flex flex-col h-full">
+          <div className="flex justify-between items-center mb-8">
+            <span className="text-xl font-bold text-white">Menu</span>
+            <button onClick={() => setIsOpen(false)} className="p-1 text-gray-300 hover:text-white">
+              <HiX className="h-7 w-7" />
             </button>
           </div>
-          <div className="flex-1">
-            <Link
-              to="/"
-              className="block text-blue-500 hover-text px-3 py-2 rounded-md text-base font-medium"
-              onClick={() => setIsOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              to="/about"
-              className="block text-blue-500 hover-text px-3 py-2 rounded-md text-base font-medium"
-              onClick={() => setIsOpen(false)}
-            >
-              About
-            </Link>
-            <Link
-                  to="/skills"
-                  className="block text-blue-500 hover-text px-3 py-2 rounded-md text-base font-medium"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Skills
-                </Link>
-            <Link
-              to="/projects"
-              className="block text-blue-500 hover-text px-3 py-2 rounded-md text-base font-medium"
-              onClick={() => setIsOpen(false)}
-            >
-              Projects
-            </Link>
-            <Link
-              to="/contact"
-              className="block text-blue-500 hover-text px-3 py-2 rounded-md text-base font-medium"
-              onClick={() => setIsOpen(false)}
-            >
+          <div className="flex-1 flex flex-col gap-y-2">
+            {menuItems.map((item) => (
+              <NavLink key={item.name} to={item.link} className={mobileNavLinkClasses} onClick={() => setIsOpen(false)}>
+                {item.name}
+              </NavLink>
+            ))}
+            <NavLink to="/contact" className={mobileNavLinkClasses} onClick={() => setIsOpen(false)}>
               Contact
-            </Link>
+            </NavLink>
           </div>
-
-            <button className="bg-gradient-to-r from-slate-700 to-slate-800 text-blue-500 hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md text-base font-bold
-            md:font-extrabold hover:bg-gradient-to-r hover:from-purple-700 hover:to-blue-800 hover:scale-105 transition-all duration-300">
-              Hire me
-            </button>
+          <div className="mt-auto text-center">
+            <HireMeButton className="w-full" />
+          </div>
         </div>
       </div>
-    </nav>
-  )
-} 
+    </>
+  );
+}
+

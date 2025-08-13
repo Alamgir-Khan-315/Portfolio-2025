@@ -1,41 +1,48 @@
-import React from 'react'
-import { IoLogoHtml5 , IoLogoCss3 , IoLogoJavascript } from "react-icons/io5";
+import { IoLogoHtml5, IoLogoCss3, IoLogoJavascript } from "react-icons/io5";
 import { GrReactjs } from "react-icons/gr";
-import { SiNextdotjs , SiTailwindcss , SiTypescript } from "react-icons/si";
+import { SiNextdotjs, SiTailwindcss, SiTypescript } from "react-icons/si";
 
-const skills = () => {
 
-  const skill = [
-      {Name:'HTML' , icon:<IoLogoHtml5 /> , link:'https://developer.mozilla.org/en-US/docs/Web/HTML'} , {Name:'CSS' , icon:<IoLogoCss3 /> , link:'https://developer.mozilla.org/en-US/docs/Web/CSS'} , {Name:'JavaScript' , icon:<IoLogoJavascript /> , link:'https://developer.mozilla.org/en-US/docs/Web/JavaScript'} ,
-      {Name:'TypeScript' , icon:<SiTypescript /> , link:'https://www.typescriptlang.org/docs/'} , {Name:'Tailwind CSS' , icon:<SiTailwindcss /> , link:'https://tailwindcss.com/docs/installation'} , {Name:'React js' , icon:<GrReactjs/> , link:'https://react.dev/'} ,
-      {Name:'Next js' , icon:<SiNextdotjs /> , link:'https://nextjs.org/docs'}
-  ]
+const skillsData = [
+    { name: 'HTML', icon: <IoLogoHtml5 />, link: 'https://developer.mozilla.org/en-US/docs/Web/HTML' },
+    { name: 'CSS', icon: <IoLogoCss3 />, link: 'https://developer.mozilla.org/en-US/docs/Web/CSS' },
+    { name: 'JavaScript', icon: <IoLogoJavascript />, link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' },
+    { name: 'TypeScript', icon: <SiTypescript />, link: 'https://www.typescriptlang.org/docs/' },
+    { name: 'Tailwind CSS', icon: <SiTailwindcss />, link: 'https://tailwindcss.com/docs/installation' },
+    { name: 'React.js', icon: <GrReactjs />, link: 'https://react.dev/' },
+    { name: 'Next.js', icon: <SiNextdotjs />, link: 'https://nextjs.org/docs' }
+];
 
-  return (
-    <div>
-      <main className='mt-28 md:w-[80%] mx-auto'>
 
-        <h1 className="text-4xl font-bold text-blue-500 text-center">Skills</h1>
-
-        <p className='text-gray-300 mt-5 md:mt-16 px-6 text-justify md:text-center'>I not only work with these technologies but exelent in using them with best practices to deliver high-quality
-          result, <br className='hidden lg:block'/> i have been working with all these skills to build my portfolio projects
-        </p>
-
-        <section className='grid grid-cols-2 w-[80%]      md:grid-cols-3    lg:flex lg:flex-wrap gap-5 mt-12 mx-auto md:w-fit'>
-          { skill.map (( d , i) => (
-            <div key={i} className='border-2 border-blue-500/50 rounded-lg p-4 hover:bg-blue-500 hover:scale-110 hover:font-bold hover:shadow-2xl hover:shadow-blue-500/50
-            lg:bg-purple-400 flex flex-col gap-4 lg:rounded-t-full lg:rounded-b-lg items-center lg:p-1 lg:hover:-translate-y-12 duration-500'
-            onClick={() => window.open(d.link , '_blank')}>
-              
-              <div className='size-20 bg-gray-100 rounded-full flex items-center justify-center text-3xl md:text-4xl`'>{d.icon}</div>
-              <p className='mt-5 mb-2 text-white'>{d.Name}</p>
+export default function Skills() {
+    return (
+        <main className='container mx-auto px-4 py-5 md:py-10'>
+            <div className="text-center">
+                <h1 className="text-3xl md:text-4xl font-bold mb-4">
+                    My <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">Skills</span>
+                </h1>
+                <p className='max-w-3xl mx-auto text-gray-400 mt-4 mb-12 md:mb-16 text-lg'>
+                    I excel in using modern technologies to deliver high-quality results. Here are the tools and technologies I work with.
+                </p>
             </div>
-          ))}
-        </section>
 
-      </main>
-    </div>
-  )
+            <section className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 md:gap-8'>
+                {skillsData.map((skill, i) => (
+                    <a
+                        key={i}
+                        href={skill.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className='group flex flex-col items-center justify-center gap-4 p-6 rounded-xl bg-gray-500/10 backdrop-blur-sm border border-blue-500/20 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/20'
+                    >
+                        <div className='text-5xl md:text-6xl text-gray-300 transition-colors duration-300 group-hover:text-blue-400'>
+                            {skill.icon}
+                        </div>
+                        <p className='font-semibold text-white text-center'>{skill.name}</p>
+                    </a>
+                ))}
+            </section>
+        </main>
+    );
 }
 
-export default skills

@@ -1,45 +1,26 @@
-import { Link } from "react-router-dom";
 import { SlSocialGithub } from "react-icons/sl";
 import { GoArrowRight } from "react-icons/go";
+import ProjectCard from "./ProjectCard";
+
+// Data is moved outside the component and updated with unique IDs and more variety.
+const projectsData = [
+  { id: 1, logo:'/img/Projects/rock-paper-scissors.png' , name: 'Rock Paper Scissors', description:'A simple interactive game where players choose rock, paper, or scissors to compete against the computer, with instant results and score tracking.', tags: ['HTML', 'CSS', 'JavaScript'], Giticon: <SlSocialGithub /> , Github:'https://github.com/Alamgir-Khan-315/Rock-Paper-Scissor.git' ,  Liveicon: <GoArrowRight/> , Live:'https://rock-paper-scissor-sigma-one.vercel.app/'},
+  { id: 2, logo:'/img/Projects/portfolio-v1.png' , name: 'Personal Portfolio', description:'My personal portfolio website to showcase my skills, projects, and experience. Built with React and Tailwind CSS for a modern, responsive design.', tags: ['React', 'TailwindCSS', 'Vite'], Giticon: <SlSocialGithub /> , Github:'https://github.com/Alamgir-Khan-315/Portfolio-v1.git' ,  Liveicon: <GoArrowRight/> , Live:'https://alamgir-khan.vercel.app/'},
+  // Add more projects here
+];
 
 export default function Projects() {
-  const Projects = [
-    { logo:'/img/Projects/rock-paper-scissors.png' , name: 'Rock Paper Scissors', description:'A simple interactive game where players choose rock, paper, or scissors to compete against the computer, with instant results and score tracking.', tags: ['HTML', 'CSS', 'JavaScript'], Giticon: <SlSocialGithub /> , Github:'https://github.com/Alamgir-Khan-315/Rock-Paper-Scissor.git' ,  Liveicon: <GoArrowRight/> , Live:'https://rock-paper-scissor-sigma-one.vercel.app/'},
-    { name: 'Rock Paper Scissors', description: 'qwer' },
-    { name: 'Rock Paper Scissors', description: 'qwer' },
-  ];
-
   return (
-    <main className="mt-28 md:w-[80%] mx-auto">
-      <h1 className="text-4xl font-bold text-blue-500 text-center">Build with Code</h1>
+    <main className='container mx-auto px-4 py-5 md:py-10'>
+        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-center"> <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">Build with Code</span></h1>
       <p className="text-white text-center mt-3 md:mt-5 px-3">
         Showcasing my experience through hands-on projects and real-world applications
       </p>
 
       <div className="projects grid md:grid-cols-2 lg:grid-cols-3 gap-5 my-5 md:mt-8">
-
-        {Projects.map((d, i) => (
-          <div key={i} className="card flex flex-col items-center border mx-3 md:mx-0 rounded-xl cursor-pointer hover:scale-105 duration-300 transition-all shadow-[0_0_10px_#3b82f6] border-blue-600/30 bg-blue-900/20" >
-            <div className="logo size-14 rounded-full mt-2 bg-gradient-to-r from-purple-700 to-blue-800"><img src={d.logo} alt="" /></div>
-            <h1 className="py-2 font-bold">{d.name}</h1>
-            <p className="px-3 text-justify text-white my-1">{d.description}</p>
-
-            <div className="tags my-2 flex gap-3">
-              {d.tags?.map((tag, j) => (
-                <div key={j} className="bg-blue-800 text-white font-semibold rounded-lg px-1">
-                  {tag}
-                </div>
-              ))}
-            </div>
-
-            <div className="btn text-white flex gap-5 py-2">
-              <Link to={d.Github} target="_blank"><div className="button hover-text flex items-center gap-2"><span className="text-xl">{d.Giticon}</span>Github</div></Link>
-              <Link to={d.Live} target="_blank"><div className="button hover-text flex items-center gap-2"><span className="text-xl">{d.Liveicon}</span>Live</div></Link>
-            </div>
-
-          </div>
+        {projectsData.map((project) => (
+          <ProjectCard key={project.id} project={project} />
         ))}
-
       </div>
     </main>
   );
