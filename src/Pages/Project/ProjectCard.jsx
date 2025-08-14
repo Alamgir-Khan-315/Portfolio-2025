@@ -25,10 +25,18 @@ export default function ProjectCard({ project }) {
           <span className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
           <span className="relative flex items-center gap-2"> Github {Giticon}</span>
         </Link>
-        <Link to={Live} target="_blank" className="group relative inline-flex items-center justify-center w-full sm:w-auto px-8 py-1 text-white font-semibold bg-transparent border border-gray-600 rounded-lg overflow-hidden transition-all duration-300 hover:text-white hover:border-blue-500 shadow-lg hover:shadow-purple-500/30">
+        <Link
+          to={Live || "#"}
+          target="_blank"
+          onClick={(e) => !Live && e.preventDefault()}
+          className={`group relative inline-flex items-center justify-center w-full sm:w-auto px-8 py-1 text-white font-semibold bg-transparent border border-gray-600 rounded-lg overflow-hidden transition-all duration-300 hover:text-white hover:border-blue-500 shadow-lg hover:shadow-purple-500/30
+            ${!Live ? "cursor-not-allowed opacity-50" : "cursor-pointer"}`}
+        >
           <span className="absolute top-0 left-0 w-0 h-full bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-500 ease-out group-hover:w-full"></span>
-          <span className="relative flex items-center gap-2"> Live {Liveicon}</span>
+          <span className="relative flex items-center gap-2">Live {Liveicon}</span>
         </Link>
+
+
       </div>
     </div>
   );

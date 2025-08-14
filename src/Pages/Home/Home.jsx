@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
    
-    <main className="flex items-center justify-center min-h-[calc(100vh-10rem)]">
+    <main className="flex items-center justify-center ">
     <div className="container mx-auto px-4 py-8 text-center z-10">
       <h2 className="text-xl md:text-2xl text-gray-300 mb-2">Hi, I'm</h2>
       <h1 className="text-5xl md:text-7xl font-extrabold my-2">
