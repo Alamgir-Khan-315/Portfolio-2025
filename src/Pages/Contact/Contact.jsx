@@ -53,10 +53,12 @@ export default function Contact() {
   };
 
   return (
-    <main className='container mx-auto px-4 py-5 md:py-10'>
-        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-center"> <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">Contact Me</span></h1>
+    <main className='container flex flex-col min-h-[calc(100vh-20rem)] justify-center mx-auto px-4 py-5 md:py-10'>
 
-      <div className="grid lg:grid-cols-2 gap-16 items-start max-w-6xl mx-auto  md:mt-8 ">
+        <h1 className="text-3xl md:text-4xl font-bold mb-4 2xl:mb-[5%] text-center"> <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">Contact Me</span></h1>
+
+    <div className="center flex justify-center items-center min-h-[calc(100vh-30rem)]">
+      <div className="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto  md:mt-8 ">
         
         <div className="space-y-10 text-centerlg:text-left">
           <div>
@@ -123,6 +125,7 @@ export default function Contact() {
           </form>
         </div>
       </div>
+    </div>
     </main>
   )
 }

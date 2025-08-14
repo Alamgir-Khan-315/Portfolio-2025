@@ -28,8 +28,8 @@ export default function About() {
   };
 
   return (
-    <main className='container mx-auto px-4 py-5 md:py-10'>
-        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-center"> <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">About Me</span></h1>
+    <main className='container flex flex-col min-h-[calc(100vh-20rem)] justify-center mx-auto px-4 py-5 md:py-10'>
+        <h1 className="text-3xl md:text-4xl font-bold mb-4 2xl:mb-[5%] text-center"> <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">About Me</span></h1>
 
       <div className="grid lg:grid-cols-5 gap-12 lg:gap-20 items-start">
         
@@ -76,7 +76,7 @@ export default function About() {
 
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <Link to="/contact"  className="group relative inline-flex items-center justify-center w-full sm:w-auto px-8 text-white font-semibold bg-gray-800 rounded-lg overflow-hidden transition-all duration-300 hover:bg-gray-900 shadow-lg hover:shadow-blue-500/30"  >
+            <Link to="/contact"  className="group relative inline-flex items-center justify-center w-full sm:w-auto py-3 px-8 text-white font-semibold bg-gray-800 rounded-lg overflow-hidden transition-all duration-300 hover:bg-gray-900 shadow-lg hover:shadow-blue-500/30"  >
             <span className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
             <span className="relative flex items-center gap-2"> Contact me
             </span>

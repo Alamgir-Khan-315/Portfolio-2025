@@ -24,17 +24,16 @@ const educationData = [
 
 export default function Education() {
     return (
-        <main className='container mx-auto px-4 py-5 md:py-10'>
+        <main className='container flex flex-col min-h-[calc(100vh-10rem)] justify-center mx-auto px-4 py-5 md:py-10'>
+
             <div className="text-center">
-                <h1 className="text-3xl md:text-4xl font-bold mb-4">
-                    My <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">Education</span>
-                </h1>
+                <h1 className="text-3xl md:text-4xl font-bold mb-4 text-center"> <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">Education</span></h1>
                 <p className='max-w-3xl mx-auto text-gray-400 mt-4 mb-12 md:mb-20 text-lg'>
                     My academic journey and the qualifications that have shaped my skills and expertise.
                 </p>
             </div>
 
-            {/* Timeline Container */}
+
             <div className="relative max-w-3xl mx-auto">
                 {/* Vertical line */}
                 <div className="absolute top-0 h-full w-0.5 bg-blue-500/30 left-4 md:left-1/2 md:-translate-x-1/2"></div>
@@ -46,7 +45,7 @@ export default function Education() {
                             <FaGraduationCap className="text-blue-300" />
                         </div>
 
-                        {/* Card */}
+
                         <div className={`relative md:w-1/2 p-5 rounded-xl bg-gray-500/10 backdrop-blur-sm border border-blue-500/20 ${index % 2 === 0 ? 'md:ml-auto md:pl-10' : 'md:mr-auto md:text-right md:pr-10'}`}>
                             {/* Arrow */}
                             <div className={`absolute top-4 h-0 w-0 border-t-8 border-b-8 hidden md:block ${index % 2 === 0 ? 'border-r-8 border-r-blue-500/20 border-l-0 border-t-transparent border-b-transparent -left-2' : 'border-l-8 border-l-blue-500/20 border-r-0 border-t-transparent border-b-transparent -right-2'}`}></div>

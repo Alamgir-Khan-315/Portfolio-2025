@@ -16,11 +16,10 @@ const skillsData = [
 
 export default function Skills() {
     return (
-        <main className='container mx-auto px-4 py-5 md:py-10'>
+    <main className='container flex flex-col min-h-[calc(100vh-20rem)] justify-center mx-auto px-4 py-5 md:py-10'>
+
             <div className="text-center">
-                <h1 className="text-3xl md:text-4xl font-bold mb-4">
-                    My <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">Skills</span>
-                </h1>
+                <h1 className="text-3xl md:text-4xl font-bold mb-4 2xl:mb-[5%] text-center"> <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">Skills</span></h1>
                 <p className='max-w-3xl mx-auto text-gray-400 mt-4 mb-12 md:mb-16 text-lg'>
                     I excel in using modern technologies to deliver high-quality results. Here are the tools and technologies I work with.
                 </p>

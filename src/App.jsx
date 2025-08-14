@@ -38,7 +38,7 @@ export default function App() {
 
         <div className="min-h-screen  z-10 text-blue-500 py-3">
           <div className="flex justify-center"><Navbar /></div>
-          <div className='mt-20'>
+          <div className='mt-20 min-h-[calc(100vh-10rem)]'>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />

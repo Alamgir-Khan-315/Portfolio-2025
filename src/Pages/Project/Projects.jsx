@@ -11,9 +11,10 @@ const projectsData = [
 
 export default function Projects() {
   return (
-    <main className='container mx-auto px-4 py-5 md:py-10'>
-        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-center"> <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">Build with Code</span></h1>
-      <p className="text-white text-center mt-3 md:mt-5 px-3">
+  <main className='container flex flex-col min-h-[calc(100vh-20rem)] justify-center mx-auto px-4 py-5 md:py-10'>
+
+         <h1 className="text-3xl md:text-4xl font-bold mb-4 text-center"> <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">Build with Code</span></h1>
+      <p className="text-white text-center mt-3 md:mt-5 px-3 2xl:mb-[5%]">
         Showcasing my experience through hands-on projects and real-world applications
       </p>
 
