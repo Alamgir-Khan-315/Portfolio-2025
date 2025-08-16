@@ -2,21 +2,21 @@ import { FaGraduationCap } from 'react-icons/fa';
 
 // Placeholder data for education history, sorted chronologically
 const educationData = [
+       {
+        degree: 'Bachelor in Computer Science',
+        institution: 'FUUAST University',
+        date: '2021 - 2025',
+        description: 'Focused on software development, data structures, and algorithms. Completed a final year project on a full-stack web application.'
+    }, 
     {
-        degree: 'Frontend Development Bootcamp',
-        institution: 'The Code Institute',
-        date: '2024',
+        degree: 'Web Development',
+        institution: 'Memon Institute',
+        date: '2021',
         description: 'An intensive program covering modern frontend technologies like React, Next.js, and advanced CSS techniques.'
     },
     {
-        degree: 'Bachelor of Science in Computer Science',
-        institution: 'University of Technology',
-        date: '2020 - 2024',
-        description: 'Focused on software development, data structures, and algorithms. Completed a final year project on a full-stack web application.'
-    },
-    {
         degree: 'High School Diploma',
-        institution: 'Central City High School',
+        institution: 'Emerson College',
         date: '2018 - 2020',
         description: 'Specialized in science and mathematics, which built a strong foundation for my technical studies.'
     }
@@ -46,7 +46,7 @@ export default function Education() {
                         </div>
 
 
-                        <div className={`relative md:w-1/2 p-5 rounded-xl bg-gray-500/10 backdrop-blur-sm border border-blue-500/20 ${index % 2 === 0 ? 'md:ml-auto md:pl-10' : 'md:mr-auto md:text-right md:pr-10'}`}>
+                        <div className={`relative md:w-1/2 p-5 rounded-xl bg-gray-500/10 backdrop-blur-sm border border-blue-500/20 ${index % 2 === 0 ? 'md:ml-[54%]  md:pl-10' : 'md:-ml-[4%] md:text-right md:pr-10'}`}>
                             {/* Arrow */}
                             <div className={`absolute top-4 h-0 w-0 border-t-8 border-b-8 hidden md:block ${index % 2 === 0 ? 'border-r-8 border-r-blue-500/20 border-l-0 border-t-transparent border-b-transparent -left-2' : 'border-l-8 border-l-blue-500/20 border-r-0 border-t-transparent border-b-transparent -right-2'}`}></div>
                             <p className="text-sm font-semibold text-blue-400 mb-1">{item.date}</p>
